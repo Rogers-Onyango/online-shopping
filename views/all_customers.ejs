@@ -1,0 +1,65 @@
+<nav style="background-color:#eaeaea ; color: rgb(185, 3, 3);" class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="color: rgb(185, 3, 3);"><i class="bi bi-basket h1"></i><b><i> RollTech Online Shopping</i></b></a>
+    <button style="background-color: rgb(185, 3, 3);" class="navbar-toggler bi bi-chevron-double-down text-light px-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse container" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item px-4"><a style="color: rgb(185, 3, 3);" href="#" class="nav-link h4"><b></b><i><%= admin.username %></i></a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="text-center">
+        <%- include ("./partials/messages") %>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-8">
+                    <h4>All Customers</h4>
+                </div>
+                <div class="col-4">
+                    <i class="bi bi-people-fill text-info h3"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(customers.length > 0) { %>
+                        <% for(let customer of customers) { %>
+                            <tr>
+                                <td><%= customer.name %></td>
+                                <td><%= customer.mobile %></td>
+                                <td><%= customer.email %></td>
+                                <td>
+                                    <a href="/dashboard/admin/updateCustomer/<%= customer._id %>" class="btn btn-info g-3"><i class="bi bi-pen"></i></a>
+                                    <a href="/dashboard/admin/deleteCustomer/<%= customer._id %>" class="btn btn-danger g-3"><i class="bi bi-trash"></i></a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    <% } else{%>
+                        <tr>
+                            <td colspan="4" class="text-center"><h4>No customer has created an Account yet</h4></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <a href="/dashboard/admin" class="btn btn-info mt-3"><i class="bi bi-arrow-left"></i>Back</a>
+    </div>
+    <footer class=" text-center p-2 mt-3 text-light" id="footer" style="background-color: #f63117;">
+        <h4><p>Copyright RollTech Online Shopping &copy; 2022</p></h4> 
+     </footer>

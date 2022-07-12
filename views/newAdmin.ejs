@@ -1,0 +1,102 @@
+<nav style="background-color:#eaeaea ; color: rgb(185, 3, 3);" class="navbar navbar-expand-lg">
+    <div class="container-fluid container">
+    <a class="navbar-brand" href="/" style="color: rgb(185, 3, 3);"><i class="bi bi-basket h1"></i><b><i> RollTech Online Shopping</i></b></a>
+    <button style="background-color: rgb(185, 3, 3);" class="navbar-toggler bi bi-chevron-double-down text-light px-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse container" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a  style="color: rgb(185, 3, 3);" href="/dashboard/admin" class="nav-link"><b><i>Dashboard</i></b></a></li>
+            <li class="nav-item px-4"><a style="color: rgb(185, 3, 3);" href="#" class="nav-link h4"><b>Hello </b><i><%= admin.username %></i></a>
+                <small><i>Thank you for being part of Rolltech Online Shopping</i></small></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div style="background-color: #eaeaea;">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <%- include ("./partials/messages") %>
+            </div>
+            <div  class="col-md-8 m-auto">
+                <div style="background-color: rgb(173, 3, 3);">
+                    <div  class="card">
+                        <div class="card-header">
+                            <h3 style="color: rgb(173, 3, 3);" class="text-center"><i class="bi bi-person-plus-fill"></i> New Admin</h3>
+                        </div>
+                        <div style="background-color: rgb(163, 91, 91);" class="card-body">
+                            <div class="row">
+                                <div class="col-sm-9 m-auto">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="text-center text-primary"><i><b>Create Account</b></i></h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action="/auth/newAdmin" method="POST">
+                                                <div class="mb-3">
+                                                    <label for="uname">Username</label>
+                                                    <input type="text" name="uname" class="form-control" placeholder="Username">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="name">Full Names</label>
+                                                    <input type="text" name="name" class="form-control" placeholder="Full Names">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="email">Personal Email</label>
+                                                    <input type="email" name="Pemail" class="form-control" placeholder="Personal Email">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="email">Organisation Email </label>
+                                                    <input type="email" name="OrgEmail" class="form-control" placeholder="Organisation Email">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="deals">Deals In</label>
+                                                    <input type="text" name="deals" class="form-control" placeholder="Eg selling Trousers">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="mobile">Mobile Number</label>
+                                                    <input type="number" name="mobile" class="form-control" placeholder="Telephone Number">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="id">National ID</label>
+                                                    <input type="number" name="id" class="form-control" placeholder="National ID">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="location">Business Location</label>
+                                                    <input type="text" name="location" class="form-control" placeholder="Your Business Location">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="passcode">Passcode</label>
+                                                    <input type="password" name="passcode" class="form-control" placeholder="Give Passcode">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <input type="submit" class="btn btn-outline-danger" value="Add Admin">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer style="background-color:  rgb(95, 6, 6);" class="p-4 text-light">
+        <div class="text-center">
+            <a href="tel:0793910610"><i class="bi bi-telephone text-light h4"></i></a>
+            <a href="mailt0:rolltech5920@gmail.com"><i class="bi bi-envelope text-light h4"></i></a>
+            <a href=""><i class="bi bi-whatsapp text-success h4"></i></a>
+            <a href=""><i class="bi bi-facebook text-primary h4"></i></a>
+            <a href=""><i class="bi bi-linkedin text-primary h4"></i></a>
+            <a href=""><i class="bi bi-github text-light h4"></i></a>
+            <a href=""><i class="bi bi-globe text-light h4"></i></a>
+        </div>
+        <div class="text-center text-light">
+            <h4>Copyright &copy; 2022</h4>
+        </div>
+    
+    </footer>
+</div>

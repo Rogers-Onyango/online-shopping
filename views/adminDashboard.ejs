@@ -1,0 +1,181 @@
+<nav style="background-color:#eaeaea ; color: rgb(185, 3, 3);" class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="color: rgb(185, 3, 3);"><i class="bi bi-basket h1"></i><b><i> RollTech Online Shopping</i></b></a>
+    <button style="background-color: rgb(185, 3, 3);" class="navbar-toggler bi bi-chevron-double-down text-light px-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse container" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item px-4"><a style="color: rgb(185, 3, 3);" href="#" class="nav-link h4"><b>Welcome </b><i><%= admin.username %></i></a></li>
+        <li class="nav-item px-4">
+        <a href="" class="nav-link">
+            <form action="/dashboard/admin_logOut" method="GET">
+                <button type="submit" class=" btn btn-danger">Log Out</button></form>
+        </a>
+        </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="container p-4">
+    <h1><i class="bi bi-gear h1"></i><strong>Dashboard </strong><small style="font-size: 30px; color: rgb(185, 3, 3);"><i>Manage Your Site</i></small></h1>
+    
+</div>
+<section style="background-color: white;" class=" p-3">
+    <div class="row container">
+        <div class="row">
+            <div class="col-5">
+                <a style="background-color: rgb(185, 3, 3);" href="/dashboard/admin/changePasscode" class="btn btn-danger">Change Passcode</a>
+            </div>
+        </div>
+        <div class="col-md-3 g-4">
+            <div class="row g-4 mb-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active " style="background-color: #f63117;">
+                    <span class="bi bi-person-circle"></span> <%= admin.username %>'s Info</a>
+                    <a href="#" class="list-group-item"><span class="bi bi-person h5"></span> <%= admin.name %>  </a>
+                    <a href="#" class="list-group-item"><span class="bi bi-building h5"></span> <%= admin.location %>  </a>
+                    <a href="#" class="list-group-item"><span class="bi bi-envelope h5"></span> <%= admin.personalEmail %></a>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active " style="background-color: #f63117;">
+                       <span class="bi bi-gear-fill"></span> Dashboard </a>
+                    <a href="/auth/newAdmin" class="list-group-item"><span class="bi bi-person-plus-fill h5"></span> New Admin </a>
+                    <a href="/dashboard/new_product" class="list-group-item"><span class="bi bi-bag-plus-fill h5"></span> New Product</a>
+                    <a href="/dashboard/product_list" class="list-group-item"><span class="bi bi-cart4 h5"></span> Manage Product</a>
+                    <a href="/dashboard/all_customers" class="list-group-item"><span class="bi bi-people-fill h6"></span> Manage Customers</a>
+                    <a href="#" class="list-group-item"><span class="bi bi-basket h5"></span> Orders</a>
+                    <a href="#" class="list-group-item"><span class="bi bi-globe h5"></span> Chart Room</a>
+                    <a href="#" class="list-group-item"><span class="bi bi-bar-chart-line-fill h5"></span> Business Statistics</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 g-4">
+            <div class="panel panel-default pb-5 ">
+                <div class="panel-heading">
+                    <div class="p-2 panel-title text-light"style="background-color: #f63117;">
+                    Website Overview</div>
+                    <div class="panel-body">
+                        <div class="row container">
+                        <div class="col-md-3 g-4">
+                            <div class="well dash-box ">
+                                <h2><i class="bi bi-person-circle "></i> <span  style="background-color:#f63117 ;border-radius: 50%;" class="badge   ms-auto">  <%= numberOfAdmin %></span></h2>
+                                <h4>Admin</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3 g-4">
+                            <div class="well dash-box ">
+                                <h2><i class="bi bi-cart "></i><span  style="background-color:#f63117 ;border-radius: 50%;" class="badge   ms-auto">  012 </span></h2>
+                                <h4>Orders</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3 g-4">
+                            <div class="well dash-box ">
+                                <h2><i class="bi bi-basket "></i><span style="background-color:#f63117 ;border-radius: 50%;" class="badge ms-auto">  <%=numberOfProducts%> </span></h2>
+                                <h4>Products</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3 g-4">
+                            <div class="well dash-box">
+                                <h2><i class="bi bi-person-fill "></i> <span  style="background-color:#f63117 ;border-radius: 50%;" class="badge   ms-auto">   <%= numberOfCustomers %></span> </h2>
+                                <h4>Customers</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+            </div>
+            <div class="panel panel-default pb-4">
+                <div class="panel-heading"></div>
+             <h3><div class="panel-title text-dark" >Latest Customers</div></h3>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover">
+                        <% if(lastCustomers.length > 0) { %>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                <% for(let customer of lastCustomers){ %>
+                                    <tr>
+                                        <td><%= customer.name %></td>
+                                        <td><%= customer.mobile %></td>
+                                        <td><%= customer.email %></td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                            <% } else{ %>
+                                <p class="text-center"><b><i>No new Customer has created an Account</i></b></p>
+                                <% } %>
+                        
+                    </table>
+                    
+                </div>
+            </div>
+            <div class="panel panel-default pb-4">
+                <div class="panel-heading"></div>
+             <h3><div class="panel-title text-dark" >Latest Orders</div></h3>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr>
+                                        <td>rollins</td>
+                                        <td>3784658td>
+                                        <td>ameru@gmail.com</td>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+            <div class="panel panel-default pb-4">
+                <div class="panel-heading"></div>
+             <h3><div class="panel-title text-dark" >Latest Products</div></h3>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover">
+                        <% if(lastProducts.length > 0) { %>
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Product category</th>
+                                <th>Product Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                <% for(let product of lastProducts){ %>
+                                    <tr>
+                                        <td><%= product.name %></td>
+                                        <td><%= product.category %></td>
+                                        <td><%= product.price %>.Ksh</td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                            <% } else{ %>
+                                <p class="text-center"><b><i>No latest Products to display</i></b></p>
+                                <% } %>
+                        
+                    </table>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<footer class=" text-center p-2 mt-3" id="footer" style="background-color: #f63117;">
+    <h4><p>Copyright RollTech Online Shopping &copy; 2022</p></h4> 
+ </footer>

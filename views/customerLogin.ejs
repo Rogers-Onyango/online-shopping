@@ -1,0 +1,57 @@
+<div style="    background-color: #10a0de;height: 100vh;overflow-x: hidden;" class="">
+    <div class="container">
+        <div  class="row">
+            <div class="text-center">
+                <%- include ("./partials/messages") %>
+            </div>
+            <div  class="col-md-8 m-auto">
+                <div style="margin-top: 100px;" class="card">
+                    <div class="card-header">
+                        <div style="display: flex; text-align: center; justify-content: center;" class="text-center">
+                            <a style="text-decoration: none;" href="/auth/customer_signIn" class="text-center btn btn-outline-success px-3 mx-3">Sign In</a>
+                            <a style="text-decoration: none;" href="/auth/customer_signUp" class=" text-center btn btn-primary px-3 mx-3">Sign Up</a>
+                        </div>
+                    </div>
+                    <div  class="card-body">
+                        <div class="row">
+                            <div style="background-color: #041841; border-radius: 10px;" class="col-sm-5 g-4 text-light text-center ">
+                                <div style="margin-top: 100px; margin-bottom: 100px;">
+                                    <h4>Welcome Back!</h4>
+                                    <p>To keep connected you with us, Please sign In with your Personal info <br> <br> Thank You</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-7 g-4">
+                                <div class="row">
+                                    <div class="col-md-9 m-auto">
+                                        <h3 class="text-center"><b><i>Sign In</i></b></h3>
+                                        <div class="text-center">
+                                            <a href=""><i class="bi bi-facebook text-primary h4 px-3"></i></a>
+                                            <a href=""><i class="bi bi-linkedin text-info h4 px-3"></i></a>
+                                            <a href=""><i class="bi bi-google text-danger h4 px-3"></i></a>
+                                        </div>
+                                        <p class="text-center">Sign In to access your Account</p>
+                                        <form action="/auth/customer_signIn" method="POST">
+                                            <div class="mb-3">
+                                                <label for="email">Email</label>
+                                                <input type="email" name="email" class="form-control" placeholder="Email Address" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password">password</label>
+                                                <input type="password" name="password" id="password2" class="form-control" placeholder="Your Account Password" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="submit"  class="form-control btn btn-outline-info" value="Sign In" >
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Forgot Password? <a href="/auth/verify_email">Reset</a></p>
+                </div>
+                <a class="btn btn-dark mt-3" style="text-decoration: none;"  href="/"><i class="bi bi-arrow-left"></i> Back</a>
+            </div>
+        </div>
+    </div>
+</div>

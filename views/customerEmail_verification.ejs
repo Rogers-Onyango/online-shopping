@@ -1,0 +1,27 @@
+<div style="background-color: #eaeaea; height:100vh;overflow-x: hidden;">
+    <div class="row container">
+
+        <div class="col-sm-5 m-auto">
+            <div style="margin-top: 100px;" class="card">
+                <div style="background-color: #02256b;" class="card-header text-light text-center">
+                    <h3><i class="bi bi-envelope"></i> Email Verification </h3>
+                </div>
+                <div class="text-center">
+                    <%- include ("./partials/messages") %>
+                </div>
+                <div class="card-body">
+                    <form action="/auth/verify_email" method="POST">
+                        <div class="mb-3">
+                            <label for="email">Your Email</label>
+                            <input type="email" name="email" class="form-control"  placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" class="btn btn-outline-primary btn-block" value="Verify Email">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <a class="btn btn-dark mt-3" style="text-decoration: none;"  href="/auth/customer_signIn"><i class="bi bi-arrow-left"></i> Back</a>
+        </div>
+    </div>
+</div>

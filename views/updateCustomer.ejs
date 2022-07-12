@@ -1,0 +1,59 @@
+<nav style="background-color:#eaeaea ; color: rgb(185, 3, 3);" class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="color: rgb(185, 3, 3);"><i class="bi bi-basket h1"></i><b><i> RollTech Online Shopping</i></b></a>
+    <button style="background-color: rgb(185, 3, 3);" class="navbar-toggler bi bi-chevron-double-down text-light px-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse container" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item px-4"><a style="color: rgb(185, 3, 3);" href="#" class="nav-link h4"><b></b><i><%= admin.username %></i></a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div style="    background-color: #d8effa;height: 100vh;overflow-x: hidden;" class="">
+<div class="row">
+    <div class="col-md-5 m-auto">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center"><b><i>Update Account</i></b></h3>
+            </div>
+            <div class="card-body">
+                <form action="/dashboard/admin/updateCustomer/<%= customer._id %>" method="POST">
+                    <div class="mb-3">
+                        <label for="uname">Username</label>
+                        <input type="text" name="uname" class="form-control" value="<%= customer.username %>"  >
+                    </div>
+                    <div class="mb-3">
+                        <label for="name">Full names</label>
+                        <input type="text" name="name" class="form-control" value="<%= customer.name %>" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="number" name="mobile" class="form-control" value="<%= customer.mobile %>" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="county">County</label>
+                        <input type="text" name="county" class="form-control" value="<%= customer.county %>" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="address">Address</label>
+                        <textarea cols="10" rows="3" type="text" name="address" class="form-control" value="<%= customer.address %>" > </textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" value="<%= customer.email %>" >
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit"  class="form-control btn btn-outline-primary" value="Update Customer" >
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a class="btn btn-dark mt-3" style="text-decoration: none;"  href="/dashboard/all_customers"><i class="bi bi-arrow-left"></i> Back</a>
+    </div>
+</div>
+</div>
+<footer class=" text-center p-2 mt-3 text-light" id="footer" style="background-color: #f63117;">
+    <h4><p>Copyright RollTech Online Shopping &copy; 2022</p></h4> 
+ </footer>

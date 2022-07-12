@@ -1,0 +1,86 @@
+<div style="    background-color: #10a0de;height: 100vh;overflow-x: hidden;" class="">
+    <div class="container">
+        <div class="text-center">
+            <%- include ("./partials/messages") %>
+        </div>
+        <div  class="row ">
+            <div  class="col-md-10 m-auto">
+                <div style="margin-top: 100px;" class="card">
+                    <div class="card-header">
+                        <div style="display: flex; text-align: center; justify-content: center;" class="text-center">
+                            <a style="text-decoration: none;" href="/auth/customer_signIn" class="text-center btn btn-primary px-3 mx-3">Sign In</a>
+                            <a style="text-decoration: none;" href="/auth/customer_signUp" class=" text-center btn btn-outline-success  px-3 mx-3">Sign Up</a>
+                        </div>
+                    </div>
+                    <div  class="card-body">
+                        <div class="row">
+                            <div style="background-color: #041841; border-radius: 10px;" class="col-sm-5 g-4 text-light text-center ">
+                                <div style="margin-top: 100px; margin-bottom: 100px;">
+                                    <h4>Hello Friend!</h4>
+                                    <p>To start Your Journey with us, Please create an account with us to stay Connected and Updated anytime there is an Update <br> <br> Thank You</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-7 g-4">
+                                <div class="row">
+                                    <div class="col-md-9 m-auto">
+                                        <h3 class="text-center"><b><i>Create Account</i></b></h3>
+                                        <div class="text-center">
+                                            <a href=""><i class="bi bi-facebook text-primary h4 px-3"></i></a>
+                                            <a href=""><i class="bi bi-linkedin text-info h4 px-3"></i></a>
+                                            <a href=""><i class="bi bi-google text-danger h4 px-3"></i></a>
+                                        </div>
+                                        <p class="text-center">Sign Up to start your journey with us</p>
+                                        <form action="/auth/customer_signUp" method="POST">
+                                            <div class="mb-3">
+                                                <label for="uname">Username</label>
+                                                <input type="text" name="uname" class="form-control" placeholder="Enter prefered Username" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name">Full names</label>
+                                                <input type="text" name="name" class="form-control" placeholder="Enter your Name" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="mobile">Mobile Number</label>
+                                                <input type="number" name="mobile" class="form-control" placeholder="Enter  mobile Number" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="county">County</label>
+                                                <input type="text" name="county" class="form-control" placeholder="Enter County" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="address">Address</label>
+                                                <textarea cols="10" rows="3" type="text" name="address" class="form-control" placeholder="Enter Location address" > </textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email">Email</label>
+                                                <input type="email" name="email" class="form-control" placeholder="Email Address" >
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password">password</label>
+                                                <input type="password" name="password" id="password" oninput="validate()" class="form-control" placeholder="Your Account Password" >
+                                                <span id="validatePass"></span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="Cpassword">Confirm password</label>
+                                                <input type="password" name="Cpassword" id="Cpassword" oninput="validate()" class="form-control" placeholder="Confirm password" >
+                                                <span id="CvalidatePass"></span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <p>Show Password
+                                                <input type="checkbox" onclick="showpassword() "> </p>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="submit"  class="form-control btn btn-outline-primary" value="Sign Up" >
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-dark mt-3" style="text-decoration: none;"  href="/"><i class="bi bi-arrow-left"></i> Back</a>
+            </div>
+        </div>
+    </div>
+</div>

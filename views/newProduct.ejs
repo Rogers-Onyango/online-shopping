@@ -1,0 +1,59 @@
+<nav style="background-color:#eaeaea ; color: rgb(185, 3, 3);" class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="color: rgb(185, 3, 3);"><i class="bi bi-basket h1"></i><b><i> RollTech Online Shopping</i></b></a>
+    <button style="background-color: rgb(185, 3, 3);" class="navbar-toggler bi bi-chevron-double-down text-light px-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse container" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item px-4"><a style="color: rgb(185, 3, 3);" href="#" class="nav-link h4"><b>Hello </b><i><%= admin.username %></i></a>
+                <small><i>Thank you for being part of Rolltech Online Shopping</i></small></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 m-auto">
+            <div class="card">
+                <div style="color: rgb(185, 3, 3);" class="card-header">
+                    <h3 class="text-center"><b><i>Create New Product</i></b></h3>
+                </div>
+                <div class="text-center">
+                    <%- include ("./partials/messages") %>
+                </div>
+                <div class="card-body">
+                    <form action="/dashboard/new_product" method="POST">
+                        <div class="mb-3">
+                            <label for="name"><i>Product Name</i></label>
+                            <input type="text" name="Pname" id="Pname" class="form-control" placeholder="Product Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="category"><i>Product category</i></label>
+                            <select name="Pcategory" id="Pcategory" class="form-control">
+                                <option value="top"> Top wear</option>
+                                <option value="bottom">Bottom wear</option>
+                                <option value="shoes"> Shoes</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="desc"><i>Product Description</i></label>
+                            <input type="text" name="Pdesc" id="Pdesc" class="form-control" placeholder="Product Description">
+                        </div>
+                        <div class="mb-3">
+                            <label for="category"><i>Product Price</i></label>
+                            <input type="text" name="Pprice" id="Pprice" class="form-control" placeholder="e.g trousers,shirts,t-shirts etc">
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" value="Create" class="btn btn-danger">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <a class="btn btn-dark mt-3" style="text-decoration: none;"  href="/dashboard/admin"><i class="bi bi-arrow-left"></i> Back</a>
+        </div>
+    </div>
+</div>
+<footer class=" text-center text-light p-2 mt-3" id="footer" style="background-color: rgb(185, 3, 3);;">
+    <h4><p>Copyright RollTech Online Shopping &copy; 2022</p></h4> 
+ </footer>
